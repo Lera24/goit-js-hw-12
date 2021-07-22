@@ -1,0 +1,18 @@
+{{#each value}}
+        <div class = "wrap"> 
+            <img src="{{flag}}" alt="flag" height="30px">
+            <h2>{{name}}</h2>
+        </div>
+        <p>{{capital}}</p>
+        <p>Population {{population}}</p>
+        <ul>Languages
+            {{#each languages}}
+            <li>{{this.name}}</li>
+             {{/each}}
+        </ul> 
+{{/each}}
+
+{{#each ev}}
+<img src="{{flag}}" alt="flag" height="30px">
+<p>{{name}}</p>
+{{/each}}
