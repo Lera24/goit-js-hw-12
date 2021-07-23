@@ -48,5 +48,4 @@ const inputValue = ((event) => {
   API.fetchCountries(nameCountry).then(creatingMarkup).catch(fetchErrors());
 });
 
-
 fieldInput.addEventListener('input', debounce(inputValue, DEBOUNCE_DELAY));
