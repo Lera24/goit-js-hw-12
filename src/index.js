@@ -45,7 +45,7 @@ const inputValue = ((event) => {
     listCountry.innerHTML = '';
     return;
   };
-  API.fetchCountries(nameCountry).then(creatingMarkup).catch(fetchErrors);
+  API.fetchCountries(nameCountry).then(creatingMarkup).catch(fetchErrors());
 });
 
 
