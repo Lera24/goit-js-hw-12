@@ -23,7 +23,9 @@ const fetchErrors = (() => {
 const creatingMarkup = ((country) => {
   infoCountry.innerHTML = '';
   listCountry.innerHTML = '';
-  if (country.length === 1) {
+  if (!country.length) {
+    fetchErrors();
+  }else if (country.length === 1) {
     const marcup = сountryData({value: country});
     infoCountry.innerHTML = marcup;
   } else if (country.length >= MIN_COUNT && country.length <= MAX_COUNT) {
@@ -45,7 +47,7 @@ const inputValue = ((event) => {
     listCountry.innerHTML = '';
     return;
   };
-  API.fetchCountries(nameCountry).then(creatingMarkup).catch(fetchErrors());
+  API.fetchCountries(nameCountry).then(creatingMarkup).catch(error => console.log(error));
 });
 
 fieldInput.addEventListener('input', debounce(inputValue, DEBOUNCE_DELAY));
